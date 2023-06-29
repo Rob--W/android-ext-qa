@@ -18,9 +18,8 @@ Repository: https://github.com/Rob--W/android-ext-qa
 ## Overview
 
 Each section describes a relevant part of the test process. All steps are
-designed to .
-Each section describes a specific task that is relevant to
-This file provides instructions for specific acti
+designed to be as independent of external factors as possible. In particular,
+internet connectivity is not required.
 
 
 ## Clean profile directory
@@ -44,15 +43,15 @@ Setup:
 2. Copy `replace.this.with.id-geckoview-config.yaml` to `org.mozilla.fenix-geckoview-config.yaml`
    and edit it: replace `replace.this.with.id` with `org.mozilla.fenix`.
    Then push the file to the device:
-    ```
+    ```sh
     adb push org.mozilla.fenix-geckoview-config.yaml /data/local/tmp/
     ```
 3. Create the profile directory as specified in the config.
-    ```
+    ```sh
     adb shell mkdir /sdcard/Android/data/org.mozilla.fenix/ext-qa-profdir
     ```
 4. Set the debug app to the Fenix app:
-    ```
+    ```sh
     adb shell am set-debug-app --persistent org.mozilla.fenix
     ```
 
@@ -63,7 +62,7 @@ https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/automa
 Whenever you want to restart with an empty profile after the setup, force-stop
 the Fenix app, delete the profile directory and create it again:
 
-```
+```sh
 adb shell am force-stop org.mozilla.fenix
 adb shell rm -r /sdcard/Android/data/org.mozilla.fenix/ext-qa-profdir
 adb shell mkdir /sdcard/Android/data/org.mozilla.fenix/ext-qa-profdir
@@ -73,15 +72,15 @@ adb shell mkdir /sdcard/Android/data/org.mozilla.fenix/ext-qa-profdir
 When you are done, restore the original state as follows:
 
 6. Clear the debug app:
-    ```
+    ```sh
     adb shell am clear-debug-app
     ```
 7. Remove the config file (replace the ID as before):
-    ```
+    ```sh
     adb shell rm /data/local/tmp/org.mozilla.fenix-geckoview-config.yaml
     ```
 8. Remove the profile directory:
-    ```
+    ```sh
     adb shell am force-stop org.mozilla.fenix
     adb shell rm -r /sdcard/Android/data/org.mozilla.fenix/ext-qa-profdir
     ```
@@ -123,11 +122,11 @@ To install any extension on Release, or add-ons not on AMO, follow these steps
 to replace the contents of the default collection with the ones of choice:
 
 1. Put the prepared JSON and XPI files on the device:
-    ```
+    ```sh
     adb push ext-qa-data/ /data/local/tmp/ext-qa-data
     ```
 2. Run this JS snippet in the main process to replace the collection:
-    ```javascript
+    ```js
     IOUtils.copy(
       "/data/local/tmp/ext-qa-data/mozilla_components_addon_collection_en_Extensions-for-Android.json",
       Services.env.get("HOME") + "/mozilla_components_addon_collection_en_Extensions-for-Android.json"
@@ -145,7 +144,7 @@ be modified by other apps, only the app itself or with root privileges. To
 remove the file, either use Android's "App Info" -> "Clear storage", or run the
 next JS snippet in the main process:
 
-```javascript
+```js
 IOUtils.remove(
   Services.env.get("HOME") + "/mozilla_components_addon_collection_en_Extensions-for-Android.json"
 );
@@ -163,7 +162,7 @@ If that does still not work, confirm that the file name is correct:
    will download and initialize the list of extensions.
 3. Run the following snippet to see the full expected file path path:
 
-```javascript
+```js
 IOUtils.getChildren(Services.env.get("HOME")).then(
   files => files.filter(p => p.includes("mozilla_components_addon_collection"))
 ).then(console.log);
@@ -245,13 +244,13 @@ To determine the extension ID of an arbitrary XPI file:
 5. The addon ID is shown at "Extension ID"
 
 
-## Verifying telemetry
+## Verify telemetry
 
 Glean data can be read by running a JS snippet in the main process that calls
 `Glean.<category>.<metric>.testGetValue()`. For example, to query recorded
 blocklist state change events, run:
 
-```javascript
+```js
 Glean.blocklist.addonBlockChange.testGetValue();
 ```
 
