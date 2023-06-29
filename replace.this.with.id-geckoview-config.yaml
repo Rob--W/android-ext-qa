@@ -1,0 +1,16 @@
+# This file is part of https://github.com/Rob--W/android-ext-qa
+#
+# For general documentation on this file format, see
+# https://firefox-source-docs.mozilla.org/mobile/android/geckoview/consumer/automation.html#configuration-file-format
+
+# Replace "replace.this.with.id" below with the actual ID of the Fenix app!
+
+args:
+  - --profile
+  - "/sdcard/Android/data/replace.this.with.id/ext-qa-profdir"
+
+prefs:
+  this.is.ext-qa: true
+  # Uncomment the following lines to test updates manually
+  #extensions.checkUpdateSecurity: false
+  #extensions.update.url: "file:///data/local/tmp/ext-qa-data/ext_updates.json"

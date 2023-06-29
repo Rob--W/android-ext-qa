@@ -1,0 +1,88 @@
+{
+  "count": 3,
+  "next": null,
+  "previous": null,
+  "results": [
+    {
+      "addon": {
+        "guid": "{a73cc3ed-9261-4571-94f6-3679930f0332}",
+        "authors": [],
+        "created": "2022-02-22T22:22:22Z",
+        "last_updated": "2023-03-03T03:33:33Z",
+        "current_version": {
+          "version": "1.0",
+          "files": [
+            {
+              "id": 460027388,
+              "size": 143256,
+              "url": "file:///data/local/tmp/ext-qa-data/addons_canary-1.0.xpi",
+              "permissions": []
+            }
+          ]
+        },
+        "name": "canary",
+        "description": "[ addon: {a73cc3ed-9261-4571-94f6-3679930f0332}:1.0 ]\n\nA canary extension for testing blocks.",
+        "summary": "[version 1.0] A canary extension for testing blocks.",
+        "icon_url": null,
+        "url": null,
+        "ratings": null,
+        "default_locale": null
+      },
+      "notes": null
+    },
+    {
+      "addon": {
+        "guid": "{a73cc3ed-9261-4571-94f6-3679930f0332}",
+        "authors": [],
+        "created": "2022-02-22T22:22:22Z",
+        "last_updated": "2023-03-03T03:33:33Z",
+        "current_version": {
+          "version": "2.0",
+          "files": [
+            {
+              "id": 4019887332,
+              "size": 185790,
+              "url": "file:///data/local/tmp/ext-qa-data/addons_canary-2.0.xpi",
+              "permissions": []
+            }
+          ]
+        },
+        "name": "canary",
+        "description": "[ addon: {a73cc3ed-9261-4571-94f6-3679930f0332}:2.0 ]\n\nA canary extension for testing blocks.",
+        "summary": "[version 2.0] A canary extension for testing blocks.",
+        "icon_url": null,
+        "url": null,
+        "ratings": null,
+        "default_locale": null
+      },
+      "notes": null
+    },
+    {
+      "addon": {
+        "guid": "{a73cc3ed-9261-4571-94f6-3679930f0332}",
+        "authors": [],
+        "created": "2022-02-22T22:22:22Z",
+        "last_updated": "2023-03-03T03:33:33Z",
+        "current_version": {
+          "version": "3.0",
+          "files": [
+            {
+              "id": 3352959576,
+              "size": 187080,
+              "url": "file:///data/local/tmp/ext-qa-data/addons_canary-3.0.xpi",
+              "permissions": []
+            }
+          ]
+        },
+        "name": "canary",
+        "description": "[ addon: {a73cc3ed-9261-4571-94f6-3679930f0332}:3.0 ]\n\nA canary extension for testing blocks.",
+        "summary": "[version 3.0] A canary extension for testing blocks.",
+        "icon_url": null,
+        "url": null,
+        "ratings": null,
+        "default_locale": null
+      },
+      "notes": null
+    }
+  ]
+}

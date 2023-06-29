@@ -1,0 +1,20 @@
+{
+  "addons": {
+    "{a73cc3ed-9261-4571-94f6-3679930f0332}": {
+      "updates": [
+        {
+          "version": "2.0",
+          "update_link": "file:///data/local/tmp/ext-qa-data/addons_canary-2.0.xpi"
+        },
+        {
+          "version": "3.0",
+          "update_link": "file:///data/local/tmp/ext-qa-data/addons_canary-3.0.xpi"
+        },
+        {
+          "version": "1.0",
+          "update_link": "file:///data/local/tmp/ext-qa-data/addons_canary-1.0.xpi"
+        }
+      ]
+    }
+  }
+}
