@@ -108,7 +108,8 @@ Verify that the debugger is running in the right context:
 
 - Run `location` and confirm that the output is `chrome://geckoview/content/geckoview.xhtml`
 - If the location is `resource://gre-resources/hiddenWindow.html`, it means
-  that step 2 was skipped, or all tabs were closed. Restart from step 2.
+  that step 2 was skipped, or all tabs were closed. Close the debugger and
+  restart from step 2.
 - If the location is incorrect, close the debugger and restart from step 3.
 
 
@@ -123,7 +124,7 @@ to replace the contents of the default collection with the ones of choice:
 
 1. Put the prepared JSON and XPI files on the device:
     ```sh
-    adb push ext-qa-data/ /data/local/tmp/ext-qa-data
+    adb push ext-qa-data /data/local/tmp/
     ```
 2. Run this JS snippet in the main process to replace the collection:
     ```js
